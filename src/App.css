@@ -294,3 +294,19 @@ a:focus-visible {
 .price-highlight {
   font-size: 1.1rem;
 }
+/* Mobiilioptimointi otsikolle */
+@media (max-width: 640px) {
+  .hero-headline {
+    font-size: clamp(32px, 12vw, 48px) !important;
+    line-height: 1 !important;
+    word-break: keep-all;
+    hyphens: none;
+  }
+}
+
+/* Pienet näytöt */
+@media (max-width: 380px) {
+  .hero-headline {
+    font-size: 28px !important;
+  }
+}
