@@ -255,3 +255,42 @@ a:focus-visible {
     page-break-inside: avoid;
   }
 }
+
+/* Vahvemmat tekstit luettavuuden parantamiseksi */
+
+.hero-subheadline {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 1.15rem !important;
+  font-weight: 400;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-eyebrow {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.hero-caption {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1rem !important;
+  font-weight: 400;
+}
+
+/* Navigaatio selkeämmäksi */
+.nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.8rem !important;
+  font-weight: 500;
+}
+
+/* Palveluiden tekstit */
+.text-gray-text {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Hinnat ja muut korostukset */
+.price-highlight {
+  font-size: 1.1rem;
+}
