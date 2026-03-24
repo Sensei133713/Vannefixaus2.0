@@ -327,7 +327,7 @@ function App() {
 
       <section ref={heroRef} className="relative min-h-screen w-full">
         <div className="absolute inset-0">
-          <img src="/images/hero_workshop_bg.jpg" alt="Workshop" className="w-full h-full object-cover" />
+          <img src="./images/hero_workshop_bg.jpg" alt="Workshop" className="w-full h-full object-cover" />
           <div className="hero-overlay absolute inset-0 bg-gradient-to-b from-charcoal/55 to-charcoal/85" />
         </div>
         <div className="hero-rule vertical-rule absolute left-[4.5vw] top-[18vh] h-[64vh] origin-top hidden lg:block" />
@@ -340,7 +340,7 @@ function App() {
           </a>
         </div>
         <div className="hero-image-card image-card absolute right-[5vw] lg:right-[6vw] top-auto bottom-[15vh] lg:top-[18vh] w-[90vw] lg:w-[34vw] h-[30vh] lg:h-[56vh]">
-          <img src="/images/hero_service_card.jpg" alt="Tire service" className="w-full h-full object-cover" />
+          <img src="./images/hero_service_card.jpg" alt="Tire service" className="w-full h-full object-cover" />
         </div>
         <div className="hero-caption absolute right-[5vw] lg:right-[6vw] bottom-[5vh] lg:top-[78vh] w-[90vw] lg:w-[34vw]">
           <p className="text-sm text-white/60">{t.hero.caption}</p>
@@ -350,7 +350,7 @@ function App() {
       <section ref={tireWorksRef} className="relative z-20 bg-charcoal py-20 lg:py-32 px-[5vw] lg:px-[6vw]">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           <div className="tireworks-animate image-card w-full lg:w-[40vw] h-[35vh] lg:h-[56vh] flex-shrink-0">
-            <img src="/images/tire_fitting.jpg" alt="Tire fitting" className="w-full h-full object-cover" />
+            <img src="./images/tire_fitting.jpg" alt="Tire fitting" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1">
             <div className="tireworks-animate flex items-center gap-3 mb-4">
@@ -392,7 +392,7 @@ function App() {
             </div>
           </div>
           <div className="alignment-animate image-card w-full lg:w-[40vw] h-[35vh] lg:h-[56vh] flex-shrink-0">
-            <img src="/images/alignment.jpg" alt="Wheel alignment" className="w-full h-full object-cover" />
+            <img src="./images/alignment.jpg" alt="Wheel alignment" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -400,7 +400,7 @@ function App() {
       <section ref={acRef} className="relative z-40 bg-charcoal py-20 lg:py-32 px-[5vw] lg:px-[6vw]">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           <div className="ac-animate image-card w-full lg:w-[40vw] h-[35vh] lg:h-[56vh] flex-shrink-0">
-            <img src="/images/ac_service.jpg" alt="AC service" className="w-full h-full object-cover" />
+            <img src="./images/ac_service.jpg" alt="AC service" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1">
             <div className="ac-animate flex items-center gap-3 mb-4">
@@ -446,7 +446,7 @@ function App() {
             </a>
           </div>
           <div className="wheel-animate image-card w-full lg:w-[40vw] h-[35vh] lg:h-[56vh] flex-shrink-0">
-            <img src="/images/wheel_repair.jpg" alt="Wheel repair" className="w-full h-full object-cover" />
+            <img src="./images/wheel_repair.jpg" alt="Wheel repair" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -454,7 +454,7 @@ function App() {
       <section ref={weldingRef} className="relative z-[60] bg-charcoal py-20 lg:py-32 px-[5vw] lg:px-[6vw]">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           <div className="welding-animate image-card w-full lg:w-[40vw] h-[35vh] lg:h-[56vh] flex-shrink-0">
-            <img src="/images/tire_hotel.jpg" alt="Welding" className="w-full h-full object-cover" />
+            <img src="./images/tire_hotel.jpg" alt="Welding" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1">
             <div className="welding-animate flex items-center gap-3 mb-4">
@@ -579,7 +579,7 @@ function App() {
             <p className="text-charcoal/50 text-sm max-w-md">{t.contact.note}</p>
           </div>
           <div className="contact-right lg:w-[55%] h-[40vh] lg:min-h-[600px] relative">
-            <img src="/images/location_map.jpg" alt="Location map" className="w-full h-full object-cover" />
+            <img src="./images/location_map.jpg" alt="Location map" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
           </div>
         </div>
