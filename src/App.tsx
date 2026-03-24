@@ -325,25 +325,53 @@ function App() {
         </div>
       </nav>
 
-      <section ref={heroRef} className="relative min-h-screen w-full">
+      <section ref={heroRef} className="relative min-h-screen w-full flex items-center justify-center lg:justify-start">
         <div className="absolute inset-0">
           <img src="./images/hero_workshop_bg.jpg" alt="Workshop" className="w-full h-full object-cover" />
-          <div className="hero-overlay absolute inset-0 bg-gradient-to-b from-charcoal/55 to-charcoal/85" />
+          <div className="hero-overlay absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/90 to-charcoal/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-charcoal/40" />
         </div>
-        <div className="hero-rule vertical-rule absolute left-[4.5vw] top-[18vh] h-[64vh] origin-top hidden lg:block" />
-        <div className="hero-headline-block absolute left-[5vw] lg:left-[7vw] top-[15vh] lg:top-[18vh] w-[90vw] lg:w-[46vw]">
-          <div className="hero-eyebrow font-mono text-xs tracking-widest text-white/60 mb-4">{t.hero.eyebrow}</div>
-          <h1 className="hero-headline font-display text-[clamp(36px,10vw,84px)] font-bold text-white uppercase leading-[0.95] tracking-tight">{t.hero.headline}</h1>
-          <p className="hero-subheadline mt-6 text-base lg:text-lg text-gray-text max-w-md">{t.hero.subheadline}</p>
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hero-cta btn-primary mt-8 inline-flex items-center gap-2">
-            <MessageCircle size={18} />{t.hero.cta}
-          </a>
+        
+        <div className="relative z-10 w-full px-6 lg:px-20 py-20 text-center lg:text-left">
+          <div className="max-w-4xl mx-auto lg:mx-0">
+            <div className="hero-eyebrow flex items-center justify-center lg:justify-start gap-3 mb-6">
+              <div className="w-12 h-[2px] bg-yellow-accent hidden lg:block"></div>
+              <span className="font-mono text-sm tracking-widest text-yellow-accent uppercase">
+                {t.hero.eyebrow}
+              </span>
+            </div>
+            
+            <h1 className="hero-headline font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase leading-[0.9] tracking-tight mb-8">
+              {t.hero.headline}
+            </h1>
+            
+            <p className="hero-subheadline text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-medium">
+              {t.hero.subheadline}
+            </p>
+            
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" 
+               className="hero-cta btn-primary text-base px-8 py-4 inline-flex items-center gap-3">
+              <MessageCircle size={20} />
+              {t.hero.cta}
+            </a>
+            
+            <div className="hero-caption mt-16 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-white/80 text-sm">
+              <div className="flex items-center gap-2">
+                <MapPin size={16} className="text-yellow-accent" />
+                <span>Harrinkuja 43, Tornio</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock size={16} className="text-yellow-accent" />
+                <span>{t.hero.caption}</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="hero-image-card image-card absolute right-[5vw] lg:right-[6vw] top-auto bottom-[15vh] lg:top-[18vh] w-[90vw] lg:w-[34vw] h-[30vh] lg:h-[56vh]">
-          <img src="./images/hero_service_card.jpg" alt="Tire service" className="w-full h-full object-cover" />
-        </div>
-        <div className="hero-caption absolute right-[5vw] lg:right-[6vw] bottom-[5vh] lg:top-[78vh] w-[90vw] lg:w-[34vw]">
-          <p className="text-sm text-white/60">{t.hero.caption}</p>
+        
+        <div className="hidden lg:block absolute right-20 top-1/2 -translate-y-1/2 w-[400px] h-[500px]">
+          <div className="hero-image-card image-card w-full h-full">
+            <img src="./images/hero_service_card.jpg" alt="Tire service" className="w-full h-full object-cover" />
+          </div>
         </div>
       </section>
 
