@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 14% 4%;
+    --foreground: 0 0% 100%;
+    --card: 220 14% 6%;
+    --card-foreground: 0 0% 100%;
+    --popover: 220 14% 6%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 87% 62%;
+    --primary-foreground: 220 14% 4%;
+    --secondary: 220 10% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 10% 15%;
+    --muted-foreground: 220 9% 68%;
+    --accent: 45 87% 62%;
+    --accent-foreground: 220 14% 4%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 45 87% 62%;
+    --radius: 0.375rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Typography */
+.font-display {
+  font-family: 'Sora', sans-serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Grain overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2d35;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3d45;
+}
+
+/* Button hover effects */
+.btn-primary {
+  @apply bg-[#F2C94C] text-[#0B0C0F] font-semibold px-6 py-3 rounded-md transition-all duration-200;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-outline {
+  @apply border border-white/20 text-white font-medium px-6 py-3 rounded-md transition-all duration-200;
+}
+
+.btn-outline:hover {
+  @apply border-[#F2C94C] text-[#F2C94C];
+  transform: translateY(-2px);
+}
+
+/* Section styles */
+.section-pinned {
+  @apply relative w-screen h-screen overflow-hidden;
+}
+
+/* Image card style */
+.image-card {
+  @apply relative overflow-hidden border border-white/10;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.image-card img {
+  @apply w-full h-full object-cover;
+}
+
+/* Hairline separator */
+.hairline {
+  @apply w-full h-px bg-white/10;
+}
+
+/* Vertical rule */
+.vertical-rule {
+  @apply w-px bg-white/15;
+}
+
+/* Price highlight */
+.price-highlight {
+  @apply text-[#F2C94C] font-semibold;
+}
+
+/* FAQ accordion */
+.faq-item {
+  @apply border-b border-white/10;
+}
+
+/* Review card */
+.review-card {
+  @apply border border-white/10 rounded-md p-6 bg-white/5;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Language toggle */
+.lang-toggle {
+  @apply font-mono text-xs tracking-wider;
+}
+
+.lang-toggle button {
+  @apply px-2 py-1 transition-colors;
+}
+
+.lang-toggle button.active {
+  @apply text-[#F2C94C];
+}
+
+.lang-toggle button:not(.active) {
+  @apply text-white/50 hover:text-white;
+}
+
+/* Navigation */
+.nav-link {
+  @apply font-mono text-xs tracking-wider text-white/70 hover:text-white transition-colors;
+}
+
+/* Focus styles */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(242, 201, 76, 0.8);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

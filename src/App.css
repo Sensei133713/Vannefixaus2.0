@@ -1,0 +1,257 @@
+/* App-specific styles - Clean version without overlaps */
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body base styles */
+body {
+  overflow-x: hidden;
+  background-color: #0B0C0F;
+}
+
+/* Section base - ensure proper spacing */
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* Image card styling */
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #F2C94C;
+  color: #0B0C0F;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(242, 201, 76, 0.3);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-outline:hover {
+  border-color: #F2C94C;
+  color: #F2C94C;
+  transform: translateY(-2px);
+}
+
+/* Navigation link */
+.nav-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+/* Language toggle */
+.lang-toggle button {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.lang-toggle button.active {
+  color: #F2C94C;
+}
+
+.lang-toggle button:not(.active) {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lang-toggle button:not(.active):hover {
+  color: white;
+}
+
+/* Price highlight */
+.price-highlight {
+  color: #F2C94C;
+  font-weight: 600;
+}
+
+/* Review card */
+.review-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* FAQ item */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item button {
+  transition: background-color 0.2s ease;
+}
+
+.faq-item button:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Hairline separator */
+.hairline {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Vertical rule */
+.vertical-rule {
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Hero specific adjustments */
+.hero-headline-block {
+  z-index: 10;
+}
+
+.hero-image-card {
+  z-index: 5;
+}
+
+.hero-caption {
+  z-index: 10;
+}
+
+/* Mobile optimizations */
+@media (max-width: 1023px) {
+  .hero-headline-block {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    padding: 12vh 5vw 4vh;
+  }
+  
+  .hero-image-card {
+    position: relative !important;
+    right: auto !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 90% !important;
+    height: 250px !important;
+    margin: 0 auto 2rem;
+  }
+  
+  .hero-caption {
+    position: relative !important;
+    right: auto !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 90% !important;
+    margin: 0 auto;
+    padding-bottom: 4vh;
+  }
+  
+  .hero-rule {
+    display: none !important;
+  }
+  
+  section {
+    min-height: auto !important;
+  }
+}
+
+/* Ensure text doesn't overflow */
+h1, h2, h3, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #F2C94C;
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  .grain-overlay,
+  nav,
+  .fixed {
+    display: none !important;
+  }
+  
+  section {
+    page-break-inside: avoid;
+  }
+}
