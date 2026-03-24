@@ -310,3 +310,52 @@ a:focus-visible {
     font-size: 28px !important;
   }
 }
+
+/* Navigaation parannukset */
+nav {
+  padding: 1rem 2rem !important;
+  background: linear-gradient(to bottom, rgba(11, 12, 15, 0.95), rgba(11, 12, 15, 0.7)) !important;
+  backdrop-filter: blur(10px);
+}
+
+nav .font-mono {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.1em !important;
+}
+
+.nav-link {
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(242, 201, 76, 0.1);
+  color: #F2C94C !important;
+}
+
+.lang-toggle button {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  padding: 0.4rem 0.8rem !important;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  nav .font-mono {
+    font-size: 0.85rem !important;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+}
