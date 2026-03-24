@@ -15,7 +15,9 @@ import {
   Warehouse,
   Star,
   CheckCircle2,
-  Clock
+  Clock,
+  Menu,
+  X
 } from 'lucide-react';
 import './App.css';
 
@@ -27,7 +29,6 @@ const translations = {
   fi: {
     nav: { services: 'Palvelut', prices: 'Hinnat', contact: 'Yhteys' },
     hero: {
-      eyebrow: 'TORNION VANNEFIXAUS',
       headline: 'VANNEFIXAUS',
       subheadline: 'Rengaskauppa ja korjaamo Torniossa — ammattitaidolla ja joustavasti.',
       cta: 'Varaa aika',
@@ -113,7 +114,6 @@ const translations = {
   sv: {
     nav: { services: 'Tjänster', prices: 'Priser', contact: 'Kontakt' },
     hero: {
-      eyebrow: 'TORNIO FÄLGFIX',
       headline: 'FÄLGFIX',
       subheadline: 'Däckbutik och verkstad i Torneå — professionellt och flexibelt.',
       cta: 'Boka tid',
@@ -201,6 +201,7 @@ const translations = {
 function App() {
   const [lang, setLang] = useState<Language>('fi');
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = translations[lang];
 
   const heroRef = useRef<HTMLDivElement>(null);
@@ -225,7 +226,6 @@ function App() {
       const heroTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
       heroTl
         .fromTo('.hero-overlay', { opacity: 0 }, { opacity: 1, duration: 0.3 })
-        .fromTo('.hero-eyebrow', { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 }, 0.2)
         .fromTo('.hero-headline', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, 0.25)
         .fromTo('.hero-subheadline', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, 0.4)
         .fromTo('.hero-cta', { scale: 0.96, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4 }, 0.5)
@@ -311,18 +311,42 @@ function App() {
     <div className="relative bg-charcoal min-h-screen overflow-x-hidden">
       <div className="grain-overlay" />
 
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between bg-gradient-to-b from-charcoal/90 to-transparent">
-        <div className="font-mono text-xs tracking-wider text-white/80">Tornion VanneFixaus</div>
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between bg-gradient-to-b from-charcoal/95 to-charcoal/70 backdrop-blur-md">
+        <div className="font-mono text-base font-semibold text-white tracking-wider">Tornion VanneFixaus</div>
+        
         <div className="hidden md:flex items-center gap-8">
           <button onClick={() => scrollToSection(tireWorksRef)} className="nav-link">{t.nav.services}</button>
           <button onClick={() => scrollToSection(alignmentRef)} className="nav-link">{t.nav.prices}</button>
           <button onClick={() => scrollToSection(contactRef)} className="nav-link">{t.nav.contact}</button>
         </div>
-        <div className="lang-toggle flex items-center gap-1">
+        
+        <div className="md:hidden flex items-center gap-4">
+          <div className="lang-toggle flex items-center gap-1">
+            <button onClick={() => setLang('fi')} className={lang === 'fi' ? 'active' : ''}>FI</button>
+            <span className="text-white/30">/</span>
+            <button onClick={() => setLang('sv')} className={lang === 'sv' ? 'active' : ''}>SV</button>
+          </div>
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-white p-2"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+        
+        <div className="hidden md:flex lang-toggle items-center gap-1">
           <button onClick={() => setLang('fi')} className={lang === 'fi' ? 'active' : ''}>FI</button>
           <span className="text-white/30">/</span>
           <button onClick={() => setLang('sv')} className={lang === 'sv' ? 'active' : ''}>SV</button>
         </div>
+        
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-charcoal/95 backdrop-blur-md border-t border-white/10 py-4 px-6">
+            <button onClick={() => { scrollToSection(tireWorksRef); setMobileMenuOpen(false); }} className="block w-full text-left py-3 text-white/90 hover:text-yellow-accent">{t.nav.services}</button>
+            <button onClick={() => { scrollToSection(alignmentRef); setMobileMenuOpen(false); }} className="block w-full text-left py-3 text-white/90 hover:text-yellow-accent">{t.nav.prices}</button>
+            <button onClick={() => { scrollToSection(contactRef); setMobileMenuOpen(false); }} className="block w-full text-left py-3 text-white/90 hover:text-yellow-accent">{t.nav.contact}</button>
+          </div>
+        )}
       </nav>
 
       <section ref={heroRef} className="relative min-h-screen w-full flex items-center justify-center lg:justify-start">
@@ -334,13 +358,6 @@ function App() {
         
         <div className="relative z-10 w-full px-6 lg:px-20 py-20 text-center lg:text-left">
           <div className="max-w-4xl mx-auto lg:mx-0">
-            <div className="hero-eyebrow flex items-center justify-center lg:justify-start gap-3 mb-6">
-              <div className="w-12 h-[2px] bg-yellow-accent hidden lg:block"></div>
-              <span className="font-mono text-sm tracking-widest text-yellow-accent uppercase">
-                {t.hero.eyebrow}
-              </span>
-            </div>
-            
             <h1 className="hero-headline font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase leading-[0.9] tracking-tight mb-8">
               {t.hero.headline}
             </h1>

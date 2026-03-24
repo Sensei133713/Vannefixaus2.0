@@ -294,20 +294,20 @@ a:focus-visible {
 .price-highlight {
   font-size: 1.1rem;
 }
-/* Mobiilioptimointi otsikolle */
+/* Mobiilioptimointi otsikolle - korjattu */
 @media (max-width: 640px) {
   .hero-headline {
-    font-size: clamp(32px, 12vw, 48px) !important;
-    line-height: 1 !important;
-    word-break: keep-all;
-    hyphens: none;
+    font-size: 2.5rem !important; /* Pienempi koko */
+    line-height: 1.1 !important;
+    word-break: normal !important;
+    overflow-wrap: break-word;
   }
 }
 
-/* Pienet näytöt */
-@media (max-width: 380px) {
+/* Vielä pienemmät näytöt */
+@media (max-width: 400px) {
   .hero-headline {
-    font-size: 28px !important;
+    font-size: 2rem !important; /* Vielä pienempi */
   }
 }
 
@@ -357,5 +357,18 @@ nav .font-mono {
   .nav-link {
     font-size: 0.8rem !important;
     padding: 0.4rem 0.6rem !important;
+  }
+}
+/* Aukiolotiedot omille riveille mobiilissa */
+@media (max-width: 640px) {
+  .hero-caption {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    align-items: center !important;
+  }
+  
+  .hero-caption > div {
+    width: 100%;
+    justify-content: center;
   }
 }
